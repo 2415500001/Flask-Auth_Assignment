@@ -1,108 +1,93 @@
 # Flask Authentication App
 
-## 1) Project Title
-**Flask Authentication App**
+## Project Description
+This project is a simple user authentication system built using **Flask**.  
+It allows users to register, log in, and access a protected dashboard page.  
+User credentials are stored securely in a **SQLite database**, and passwords are hashed before being saved.
 
-## 2) Project Overview
-This project is a beginner-friendly authentication system built with Flask and Flask-SQLAlchemy. It allows users to register, log in, and access a protected dashboard page. User data is stored in a SQLite database, and passwords are securely hashed before saving.
+---
 
-## 3) Features
-- User registration and login flow
-- Protected dashboard route (only accessible after login)
-- Password hashing using `bcrypt`
-- Server-side validation in the `/register` route:
-  - Name cannot be empty
-  - Email cannot be empty
-  - Password cannot be empty
-  - Password must be at least 6 characters
-  - Email must be unique
-- Flash messages to show validation errors and success messages
-- SQLite database integration
-- Ready for deployment on Render
+## Features
+- User registration system  
+- User login authentication  
+- Password hashing for security  
+- Protected dashboard page (accessible only after login)  
+- Flash messages for error and success notifications  
 
-## 4) Tech Stack Used
-- **Backend:** Flask
-- **Database ORM:** Flask-SQLAlchemy
-- **Database:** SQLite
-- **Password Security:** bcrypt
-- **WSGI Server (Production):** Gunicorn
-- **Deployment Platform:** Render
+---
 
-## 5) Installation Steps (Local Setup)
-1. Clone the repository.
-2. Move into the project folder.
-3. Create a virtual environment:
-   ```bash
-   python -m venv .venv
-   ```
-4. Activate the virtual environment:
-   - **Windows (PowerShell):**
-     ```powershell
-     .\.venv\Scripts\Activate.ps1
-     ```
-5. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+## Tech Stack
+- **Backend:** Flask  
+- **Database:** SQLite  
+- **ORM:** Flask-SQLAlchemy  
+- **Password Security:** bcrypt  
+- **Deployment:** Render  
 
-## 6) How to Run the Application
-1. Start the Flask app:
-   ```bash
-   python app.py
-   ```
-2. Open your browser and visit:
-   ```
-   http://127.0.0.1:5000
-   ```
+---
 
-## 7) Deployment Instructions (Render)
-### Option A: Deploy as a Web Service
-1. Push your project to GitHub.
-2. In Render, click **New +** → **Web Service**.
-3. Connect your repository.
-4. Use these settings:
-   - **Build Command:** `pip install -r requirements.txt`
-   - **Start Command:** `gunicorn app:app`
-5. Set environment variables:
-   - `SECRET_KEY` (required)
-   - `PYTHON_VERSION` = `3.11.11`
-   - `DATABASE_URL` = `sqlite:////var/data/charlie.db`
-
-### Option B: Deploy with `render.yaml` (Blueprint)
-1. Keep `render.yaml` in the root folder.
-2. In Render, click **New +** → **Blueprint**.
-3. Select your repository and deploy.
-
-### Important Note for SQLite on Render
-SQLite is file-based. To keep your data after restarts, attach a persistent disk and mount it at `/var/data`.
-
-## 8) Project Structure
-```text
+## Project Structure
+```
 FlaskAuthAPP/
+│
 ├── app.py
 ├── requirements.txt
 ├── Procfile
 ├── render.yaml
-├── activate.bat
-├── instance/
 ├── templates/
 │   ├── base.html
 │   ├── index.html
 │   ├── login.html
 │   ├── register.html
 │   └── dashboard.html
-└── README.md
+└── instance/
 ```
 
-## 9) Screenshots
-Add your screenshots here:
-- Home Page
-- Register Page
-- Login Page
-- Dashboard Page
-- Flash Message Examples (validation errors/success)
+---
 
-## 10) Author
-**Atul Singh**
+## Running the Project Locally
 
-If you want, add your GitHub and LinkedIn links here for your project portfolio.
+### 1. Clone the Repository
+```bash
+git clone <repository-link>
+```
+
+### 2. Navigate to the Project Folder
+```bash
+cd FlaskAuthAPP
+```
+
+### 3. Create a Virtual Environment
+```bash
+python -m venv venv
+```
+
+### 4. Activate the Virtual Environment (Windows)
+```bash
+venv\Scripts\activate
+```
+
+### 5. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 6. Run the Application
+```bash
+python app.py
+```
+
+Open in browser:
+
+```
+http://127.0.0.1:5000
+```
+
+---
+
+## Deployment
+The application is deployed using **Render** with **Gunicorn** as the production server.
+
+---
+
+## Author
+**Aanya Tyagi**
